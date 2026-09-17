@@ -15,3 +15,7 @@ cd hello-engineering
 git add notes.md
 git commit -m "content"
 git push
+
+4. 常用命令
+git status    # 看看现在有哪些变化还没存档（改完文件先跑这个）
+git diff      # 精确显示你改了哪几行——封存前最后核对一遍
