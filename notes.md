@@ -43,3 +43,10 @@ git push
 git log --all --oneline
 git reflog
 git show （哈希值）
+
+2026/0919
+git clone 别人的项目
+cd 项目
+python -m venv .venv           # 给他单独盖间厨房
+.venv\Scripts\Activate.ps1     # 进厨房
+pip install -r requirements.txt # 照他的菜谱备料
