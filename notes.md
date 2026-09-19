@@ -38,5 +38,3 @@ git switch main
 git switch main
 git merge feature/day2-notes
 git push
-
-ghost line
