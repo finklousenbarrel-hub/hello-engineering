@@ -38,3 +38,8 @@ git switch main
 git switch main
 git merge feature/day2-notes
 git push
+
+5. 查找与找回
+git log --all --oneline
+git reflog
+git show （哈希值）
