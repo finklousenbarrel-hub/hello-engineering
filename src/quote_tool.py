@@ -9,11 +9,7 @@ RATES = {
 }
 
 def get_rate(from_cur, to_cur):
-    if (RATES.get((from_cur, to_cur)) is not None):
-        rate = RATES.get((from_cur, to_cur))
-        return rate
-    else:
-        return None
+    return RATES.get((from_cur, to_cur))
     
 
 def main():
