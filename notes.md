@@ -50,3 +50,18 @@ cd 项目
 python -m venv .venv           # 给他单独盖间厨房
 .venv\Scripts\Activate.ps1     # 进厨房
 pip install -r requirements.txt # 照他的菜谱备料
+
+2026/09/22
+## 断点调试
+作用：适用于某处函数或者循环卡住了，然后一步步去拆解
+
+launch.json的作用
+调试谁？在哪调试？如何起跑？
+
+调试操作：在行数前打红点（点击），F10单步执行，F11钻进函数里看，F5运行至下一个断点（包括起手也是F5）
+
+## logging（给自己看的输出）
+import logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.info
+logging.warning

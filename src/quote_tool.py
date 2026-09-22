@@ -1,6 +1,8 @@
 import csv
 import sys
 from pathlib import Path
+import logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 # __file__ = 这个 .py 文件自己的位置
 # 下面的写法不管终端站在哪都能找到 data/rates.csv
@@ -11,6 +13,7 @@ def load_rates():
     with open(DATA_FILE, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             rates[(row["from"], row["to"])] = float(row["rate"])
+    logging.info(f"已加载 {len(rates)} 条汇率")
     return rates
 
 try:
@@ -33,11 +36,13 @@ def main():
     to_cur = sys.argv[2].upper()
 
     rate = get_rate(from_cur, to_cur)
+    logging.info(f"用户查询了{from_cur}和{to_cur}")
 
     if rate is not None:
         print(f"1 {from_cur} = {rate} {to_cur}")
     else:
         print(f"暂不支持 {from_cur} -> {to_cur}")
+        logging.warning("用户查询未命中")
 
 if __name__ == "__main__":
     main()
