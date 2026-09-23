@@ -9,7 +9,7 @@
 1 USD = 7.1 CNY
 
 ## 环境
-- Python 版本要求 
+- Python 版本要求：Python 3.12+
 - 从零开始的安装步骤
 git clone https://github.com/finklousenbarrel-hub/hello-engineering/
 cd hello-engineering
