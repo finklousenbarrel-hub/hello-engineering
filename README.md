@@ -3,35 +3,45 @@
 一个简单的命令行汇率查询工具，我的第一个 Python 工程练习
 
 ## 功能演示
+```bash
 > python src/quote_tool.py USD CNY
 2026-09-23 18:00:02,463 [INFO] 已加载 5 条汇率
 2026-09-23 18:00:02,463 [INFO] 用户查询了USD和CNY
 1 USD = 7.1 CNY
+```
 
 ## 环境
 - Python 版本要求：Python 3.12+
 - 从零开始的安装步骤
+```bash
 git clone https://github.com/finklousenbarrel-hub/hello-engineering/
 cd hello-engineering
 python -m venv .venv           
 .venv\Scripts\Activate.ps1     
 pip install -r requirements.txt
+```
 
 ## 用法
 - 正常币种
+```bash
 > python src/quote_tool.py USD CNY
 2026-09-23 18:00:02,463 [INFO] 已加载 5 条汇率
 2026-09-23 18:00:02,463 [INFO] 用户查询了USD和CNY
 1 USD = 7.1 CNY
+```
 - 未覆盖的币种
+```bash
 > python src/quote_tool.py 币种1 不存在币种2
 > python src/quote_tool.py USD CNM
 2026-09-23 18:10:27,045 [INFO] 已加载 5 条汇率
 2026-09-23 18:10:27,045 [INFO] 用户查询了USD和CNM
 暂不支持 USD -> CNM
 2026-09-23 18:10:27,045 [WARNING] 用户查询未命中
+```
 - 数据文件缺失
+```bash
 错误：找不到数据文件 data/rates.csv
+```
 
 
 ## 限制
