@@ -2,28 +2,15 @@ import csv
 import sys
 from pathlib import Path
 import logging
+from rates import load_rates, get_rate
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
-# __file__ = 这个 .py 文件自己的位置
-# 下面的写法不管终端站在哪都能找到 data/rates.csv
-DATA_FILE = Path(__file__).parent.parent / "data" / "rates.csv"
-
-def load_rates():
-    rates = {}
-    with open(DATA_FILE, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            rates[(row["from"], row["to"])] = float(row["rate"])
-    logging.info(f"已加载 {len(rates)} 条汇率")
-    return rates
 
 try:
     RATES = load_rates()
 except FileNotFoundError:
     print("错误：找不到数据文件 data/rates.csv")
     sys.exit(1)
-
-def get_rate(from_cur, to_cur):
-    return RATES.get((from_cur, to_cur))
 
 
 def print_usage():
@@ -48,7 +35,7 @@ def main():
             print_usage()
             return
 
-    rate = get_rate(from_cur, to_cur)
+    rate = get_rate(RATES,from_cur, to_cur)
     logging.info(f"用户查询了{from_cur}和{to_cur}")
 
     if rate is not None:
