@@ -22,6 +22,10 @@ pip install -r requirements.txt
 ```
 
 ## 用法
+- 查看完整使用说明（参数含义、格式、示例、中转估算标注说明）
+```bash
+> python src/quote_tool.py --help
+```
 - 正常币种
 ```bash
 > python src/quote_tool.py USD CNY
