@@ -27,3 +27,8 @@
         3.1.3 打开编辑
             notepad $PROFILE
             打开编辑后 function venv { .\.venv\Scripts\Activate.ps1 }
+
+## freeze出来字符带空格
+现象：freeze 出来字符带空格
+原因：PowerShell > 默认 UTF-16
+解法：pip freeze | Out-File -Encoding utf8 requirements.txt
